@@ -1,0 +1,30 @@
+﻿import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+
+DATA_DIR = BASE_DIR / "data"
+PDFS_DIR = DATA_DIR / "pdfs"
+STATIC_KNOWLEDGE_DIR = DATA_DIR / "static_knowledge"
+CHROMA_DIR = BASE_DIR / "chroma_db"
+DB_PATH = BASE_DIR / "healthcare.db"
+
+EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
+CHUNK_SIZE = 500
+CHUNK_OVERLAP = 50
+TOP_K = 3
+
+LLM_PROVIDER = "groq"
+GROQ_MODEL = "llama-3.1-8b-instant"
+TEMPERATURE = 0.1
+MAX_TOKENS = 1024
+
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "your-groq-api-key-here")
+OPENFDA_API_KEY = os.getenv("OPENFDA_API_KEY", "")
+
+APPOINTMENT_SLOTS = ["09:00 AM", "10:00 AM", "11:00 AM", "02:00 PM", "03:00 PM", "04:00 PM"]
+DOCTORS_LIST = ["Dr. Usman", "Dr. Fatima", "Dr. Ali", "Dr. Sara", "Dr. Ahmed"]
+
+SIMILARITY_THRESHOLD = 0.65  # Is se kam score wale chunks ignore ho jayenge
+
+
